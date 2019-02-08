@@ -14,5 +14,5 @@ const onRender = () => {
 Highcharts.chart('chart', options);
 };
 const chartContainer = React.createElement('div', { id: 'chart' });
-ReactDOM.render(chartContainer, document.getElementById('app'), onRender);
+ReactDOM.render(chartContainer, document.getElementById('content'), onRender);
 
