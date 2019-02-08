@@ -3,7 +3,7 @@ var React = require('react'),
     Highcharts = require('highcharts'),
     addFunnel = require('highcharts/modules/funnel');
 var element = React.createElement('div', { id: 'chart' });
-ReactDOM.render(element, document.getElementById('react-app'), function () {
+ReactDOM.render(element, document.getElementById('content'), function () {
     // Apply funnel after window is present
     addFunnel(Highcharts);
     // Construct the chart
