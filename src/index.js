@@ -1,11 +1,18 @@
-var React = require('react'),
-    ReactDOM = require('react-dom'),
-    Highcharts = require('highcharts'),
-    addFunnel = require('highcharts/modules/funnel');
-var element = React.createElement('div', { id: 'chart' });
-ReactDOM.render(element, document.getElementById('content'), function () {
-    // Apply funnel after window is present
-    addFunnel(Highcharts);
-    // Construct the chart
-    Highcharts.chart('chart', { /*Options*/ });
-});
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Highcharts from 'highcharts'
+import addHeatmap from 'highcharts/modules/heatmap'
+addHeatmap(Highcharts)
+const options = {
+series: [{
+type: 'heatmap',
+data: [1, 2 , 3]
+}]
+};
+const onRender = () => {
+// Create the chart.
+Highcharts.chart('chart', options);
+};
+const chartContainer = React.createElement('div', { id: 'chart' });
+ReactDOM.render(chartContainer, document.getElementById('app'), onRender);
+
